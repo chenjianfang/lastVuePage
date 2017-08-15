@@ -1,0 +1,229 @@
+@charset "utf-8";
+$imgUrl:"../images/index/";
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size*2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size*3;
+    }
+}
+@mixin bCover($pic){ 
+    background-image: url($imgUrl+$pic);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+@mixin bContain($pic){ 
+    background-image: url($imgUrl+$pic);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+@mixin flex(){ 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin flex-justify-left(){ //左对齐
+    -webkit-box-pack:start;
+    -moz-justify-content:flex-start;
+    -webkit-justify-content:flex-start;
+    justify-content: flex-start;
+}
+@mixin flex-justify-right(){ //右对齐
+    -webkit-box-pack:end;
+    -moz-justify-content:flex-end;
+    -webkit-justify-content:flex-end;
+    justify-content: flex-end;
+}
+@mixin flex-justify-between(){  //两端对齐
+    -webkit-box-pack:justify;
+    -moz-justify-content:space-between;
+    -webkit-justify-content:space-between;
+    justify-content: space-between;
+}
+@mixin flex-justify-center(){  //居中对齐
+    -webkit-box-pack:center;
+    -moz-justify-content:center;
+    -webkit-justify-content:center;
+    justify-content: center;
+}
+@mixin flex-justify-around(){  //平均分布
+    -webkit-box-pack:justify;
+    -moz-justify-content:space-around;
+    -webkit-justify-content:space-around;
+    justify-content: space-around;
+}
+@mixin flex-align(){ //上下居中
+    -webkit-box-align:center;
+    -moz-align-items:center;
+    -webkit-align-items:center;
+    align-items: center;
+}
+@mixin flex-orient-row(){ //从左到右排列
+    -webkit-box-direction:normal;
+    -webkit-box-orient:horizontal;
+    -moz-flex-direction:row;
+    -webkit-flex-direction:row;
+    flex-direction: row;
+}
+@mixin flex-orient-col(){ //从上到下排列
+    -webkit-box-direction:normal;
+    -webkit-box-orient:vertical;
+    -moz-flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-direction: column;
+}
+
+@mixin flex-item($num){ //子元素伸缩数
+    -webkit-box-flex:$num;
+    -moz-box-flex:$num;
+    -webkit-flex:$num;
+    -ms-flex:$num;
+    flex: $num;
+}
+
+
+
+
+.insurance-declare{
+    display: block;
+    height: 0.860215rem;
+    line-height: 0.860215rem;
+    background-color: #f5f5f5;
+    text-align: left;
+    margin: 0 0.322581rem;
+    padding-left: 0.215054rem;
+    border-top: 0.027778rem solid #cacaca;
+    border-bottom: 0.027778rem solid #cacaca;
+}
+.declare-detail{
+    height: 1.72043rem;
+    margin-left: 0.322581rem;
+    padding-left: 0.430108rem;
+    @include flex();
+    @include flex-justify-left();
+    @include flex-align();
+}
+.detail-wrapper{
+    margin-left: 0.537634rem;
+}
+
+.insurance-item{
+    margin: 0 0.322581rem;
+    padding: 0.215054rem 0 0.215054rem 0.107527rem;
+    border-bottom: 1px solid #cfcfcf;
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    @include flex();
+    @include flex-align();
+    &:first-child{
+        background-color:#eee;
+        @include font-dpr(14px);
+    }
+}
+.insurance-name{
+    width: 3.225806rem;
+}
+.insurance-checkbox{
+    width: 1.591398rem;
+    @include flex();
+    @include flex-justify-left();
+    @include flex-align();
+    input{
+        display: block;
+        width: 0.416667rem;
+        height: 0.416667rem;
+    }
+}
+.insurance-select{
+    margin-right: 0.645161rem;
+    width: 2.150538rem;
+    @include flex();
+    @include flex-justify-center();
+    input,select{
+        width: 100%;
+        height: 0.645161rem;
+        line-height: 0.645161rem;
+        padding-left: 0.086022rem;
+        border-radius: 0.086022rem;
+        outline: none;
+        border:1px solid #cfcfcf;
+        box-sizing: border-box;
+    }
+}
+.insurance-nocal{
+    width: 4.55914rem;
+    @include flex();
+    @include flex-orient-col();
+    @include flex-justify-left();
+    input{
+        display: block;
+        width: 0.416667rem;
+        height: 0.416667rem;
+    }
+}
+.nocal-item{
+    @include flex();
+    @include flex-justify-left();
+    @include flex-align();
+    input:last-of-type{
+        margin-left: 0.430108rem;
+    }
+}
+.repair-select{
+    @include flex-orient-col();
+}
+.insurance-price{
+    width: 1.72043rem;
+    text-align: center;
+}
+
+
+.insurance-input{
+    width: 4.086022rem;
+    height: 1.0rem;
+    line-height: 1.0rem;
+    padding-left: 0.138889rem;
+    box-sizing: border-box;
+    border: 1px solid #cfcfcf;
+    outline: none;
+    border-radius: 0.111111rem;
+}
+.power-insurance{
+    height: 1.505376rem;
+    border: 1px solid #cfcfcf;
+    margin: 0.430108rem 0.322581rem 0;
+    @include flex();
+    @include flex-justify-left();
+    @include flex-align();
+}
+.power-insurance-txt{
+    width: 2.365591rem;
+    text-align: left;
+    padding-left: 0.322581rem;
+    box-sizing: border-box;
+}
+.power-insurance-input{
+    width:  3.397849rem;
+    height: 0.645161rem;
+    padding-left: 0.215054rem;
+    border:1px solid #cfcfcf;
+    border-radius: 0.086022rem;
+}
+.power-insurance-price{
+    margin-left: 0.322581rem;
+}
+
+.insurance-wrap{
+    .car-footer{
+        padding-bottom: 1.075269rem;
+    }
+    .form-list{
+        margin-right: 0;
+    }
+}

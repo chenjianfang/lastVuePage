@@ -1,21 +1,21 @@
 @charset "utf-8";
 $imgUrl:"../images/index/";
 @mixin font-dpr($font-size){
-	font-size: $font-size;
-	[data-dpr="2"] & {
-		font-size: $font-size*2;
-	}
-	[data-dpr="3"] & {
-		font-size: $font-size*3;
-	}
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size*2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size*3;
+    }
 }
-@mixin bgCover($pic){ 
+@mixin bCover($pic){ 
     background-image: url($imgUrl+$pic);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
-@mixin bgContain($pic){ 
+@mixin bContain($pic){ 
     background-image: url($imgUrl+$pic);
     background-repeat: no-repeat;
     background-size: contain;
@@ -86,55 +86,117 @@ $imgUrl:"../images/index/";
     -ms-flex:$num;
     flex: $num;
 }
-.container{
-    @include font-dpr(16px);
-    font-weight: 600;
-    line-height: 1;
-    background-color: #fff;
+
+.car-own{
+    .input-text{
+        width: 5.84rem;
+    }
+    .input-item > label{
+        width: 3rem;
+    }
+    .usermsg-bar{
+        margin-top: 0.645161rem;
+        margin-bottom: 0.322581rem;
+    }
+    .usermsg-bar-last{
+        margin-top: 1.075269rem;
+    }
+    .input-text.car-id-input{
+        width: 4rem;
+    }
+    .car-footer{
+        padding-bottom: 1.075269rem;
+    }
+    .insurance-item{
+        border: none;
+    }
 }
-.login-logo{
+
+
+
+
+
+
+.car-declare{
     display: block;
-    width: 2.962963rem;
-    height: 2.962963rem;
-    background: url($imgUrl+"newlogo.png") no-repeat;
-    background-size: contain;
-    background-position: center center;
-    border-radius: 50%;
-    border:1px solid #ebebeb;
-    margin-top: 2.314815rem;
-    margin-bottom: 1.064815rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-.form-box{
-    display: block;
-    width: 7.092593rem;
-    margin: 0 auto;
-}
-.login-input{
-    display: block;
-    width: 100%;
-    height: 1.203704rem;
-    line-height: 1.203704rem;
+    margin-left: 0.138889rem;
+    margin-top: 0.430108rem;
     text-align: left;
-    padding: 0 0.555556rem;
-    margin-bottom: 0.416667rem;
-    border-radius: 0.092593rem;
-    border:1px solid #635b59;
+}
+
+.input-double-radio{
+    width: 6.722222rem;
+    height: 1.0rem;
+    @include flex();
+    @include flex-align();
+    @include flex-justify-left();
+    label{
+        margin-right: 0.416667rem;
+    }
+}
+.input-tips{
+    padding-left: 2.777778rem;
+    box-sizing: border-box;
+    text-align: left;
+    margin-top: -0.277778rem;
+    margin-bottom: 0.277778rem;
+    @include flex();
+    @include flex-align();
+    color: #bd0100;
+}
+
+.up-card-txt{
+    color: #000;
+}
+.transfer-car{
+    @include flex-justify-between();
+    &>div{
+        height: 100%;
+        @include flex();
+        @include flex-align();
+    }
+}
+.judge-transfer{
+    @include font-dpr(12px);
+    color: #1134c6;
+}
+
+/*弹框*/
+.msg-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 10;
+}
+.msg-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    width: 6.451613rem;
+    background-color: #fff;
+    text-align: center;
+    border:1px solid transition;
     box-sizing: border-box;
 }
-input[type="submit"].login-input{
-    background-color: #feea01;
-    border:none;
+.msg-head{
+    margin: 0.430108rem auto;
+}
+.msg-content{
+    margin: 0 0.430108rem;
+    text-align: left;
+}
+.msg-close{
+    height: 0.860215rem;
+    line-height: 0.860215rem;
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.185185rem;
-    margin-bottom: 0.231481rem;
+    margin-top: 0.430108rem;
+    border-top: 1px solid rgba(0,0,0,0.6);
 }
-.forget-pwd{
-    display: block;
-    text-align: right;
-    @include font-dpr(12px);
+.checkbox-title{
+    margin: 0 0.537634rem;
 }
-
-

@@ -3,17 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>首页</title>
+    <title>投保</title>
     <script src="/static/lib/flexible.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/dist/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/lib/swiper-3.4.2.min.css">
 </head>
 <body>
-    <div class="init-page">
-        <div class="version">V1.0</div>
-    </div>
     <div class="container" id="app">
-        <router-view name="index" :storeval="store" :commodity-edit="onCommodityEdit"></router-view>
+        <router-view name="index"></router-view>
     </div>
     <script type="text/javascript" src="/static/dist/js/index.js"></script>
+
+    <script src="/static/lib/swiper-3.4.2.jquery.min.js"></script>
+    <script>
+        new Swiper('.swiper-container',{
+            direction: 'horizontal',
+            loop: true,
+            pagination: '.swiper-pagination'
+        });
+    </script>
 </body>
 </html>

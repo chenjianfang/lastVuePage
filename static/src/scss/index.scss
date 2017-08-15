@@ -9,13 +9,13 @@ $imgUrl:"../images/index/";
         font-size: $font-size*3;
     }
 }
-@mixin bgCover($pic){ 
+@mixin bCover($pic){ 
     background-image: url($imgUrl+$pic);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
-@mixin bgContain($pic){ 
+@mixin bContain($pic){ 
     background-image: url($imgUrl+$pic);
     background-repeat: no-repeat;
     background-size: contain;
@@ -86,159 +86,69 @@ $imgUrl:"../images/index/";
     -ms-flex:$num;
     flex: $num;
 }
-.container{
-    padding-top: 1px;
-}
-.idx-container{
-    @include font-dpr(16px);
-    font-weight: 600;
-    line-height: 1;
-    background-color: #fff;
-}
-.idx-header{
-    position: relative;
+
+.swiper-container{
     display: block;
-    height: 5.185185rem;
-    padding: 0.462963rem 0.444444rem 0;
-    background-color: #feea01;
+    height: 4.580645rem;
 }
-.idx-logo{
-    float: left;
-    width: 3.796296rem;
-    height: 0.75rem;
-    @include bgContain("logo.png");
+.loop-img-1{
+    background: #c1c1c1;
 }
-.idx-setting{
-    float: right;
-    width: 0.666667rem;
-    height: 0.666667rem;
-    @include bgContain("setting.png");
+.loop-img-2{
+    background: blue;
 }
-.idx-pay-entry{
-    position: absolute;
-    left: 50%;
-    bottom: -2.388889rem;
-    margin-left: -2.388889rem;
-    width: 4.796296rem;
-    height: 4.796296rem;
-    border: 0.259259rem solid rgba(231,220,100,0.4);
-    border-radius: 50%;
-    overflow: hidden;
+.loop-img-3{
+    background: green;
 }
-.idx-pay-entry-wrapper{
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    color: #000;
+.insurance-title{
+    margin: 0.138889rem 0.416667rem;
+    text-indent: 24px;
+    @include font-dpr(14px);
     @include flex();
-    @include flex-justify-center();
+    @include flex-justify-between();
     @include flex-align();
-    @include flex-orient-col();
 }
-.idx-money-icon{
-    display: block;
-    width: 1.324074rem;
-    height: 1.277778rem;
-    @include bgContain("moneyicon.png");
-    margin-bottom: 0.259259rem;
+.insurance-left{
+    width: 70%;
 }
-.idx-split-line{
-    display: block;
-    height: 1.12963rem;
-    margin-bottom: 2.092593rem;
-    background-color:#c2b846;
+.insurance-right{
+    width: 30%;
+    text-align: right;
+    color: #bd0100;
+    @include font-dpr(14px);
 }
-.idx-index-menu{
-    overflow-y: auto;
+.insurance-detail{
+    margin: 0 0.416667rem;
+    margin-top: 0.277778rem;
+    text-indent: 24px;
+    color: #888;
 }
-.idx-index-menu-wrapper{
-    padding: 0 1.166667rem;
-    width: 128%;
-}
-.idx-index-menu-item{
-    float: left;
-    width: 2.666667rem;
-    margin-right: 2.222222rem;
-    margin-bottom: 0.740741rem;
-    &:nth-child(3n){
-        margin-right: 0;
-    }
-}
-.idx-menu-icon-box{
-    position: relative;
-    display: block;
-    height: 2.666667rem;
-    border: 2px solid #eee;
-    border-radius: 50%;
-    box-sizing: border-box;
-    margin-bottom: 0.324074rem;
-}
-.idx-menu-icon{
+.footer{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    display: block;
-    background-repeat: no-repeat;
-    background-image: url($imgUrl+"indexmenu.png");
-    background-size: 5.555556rem 1.851852rem;
-}
-.idx-menu-icon-1{
-    width: 1.194444rem;
-    height: 1.240741rem;
-    background-position: 0 0;
-}
-.idx-menu-icon-2{
-    width: 1.111111rem;
-    height: 1.083333rem;
-    background-position: -1.351852rem 0;
-}
-.idx-menu-icon-3{
-    width: 1.046296rem;
-    height: 1.083333rem;
-    background-position: -2.62037rem 0;
-}
-.idx-menu-icon-4{
-    width: 1.12963rem;
-    height: 1.018519rem;
-    background-position: -3.824074rem 0;
-}
-.idx-menu-txt{
-    text-align: center;
-}
-/*选择框*/
-.select-box{
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    z-index: 9;
-}
-.select-lists{
-    position: absolute;
-    bottom: -26.666667rem;
     left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 0 0.32rem;
-    color: #000;
-    box-sizing: border-box;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    li{
-        height: 1.2rem;
-        line-height: 1.2rem;
-        text-align: center;
-        border-bottom: 1px solid #d7dde4;
-    }
-}
-.select-device{
     bottom: 0;
+    text-align: center;
+    @include font-dpr(14px);
 }
+.footer-left{
+    float: left;
+    width: 21%;
+    background-color: #e8e8e8;
+    color: #7c7c7c;
+    height: 1.290323rem;
+    line-height: 1.290323rem;
+}
+.footer-right{
+    float: right;
+    width: 79%;
+    background-color: #bd0100;
+    color: #fff;
+    height: 1.290323rem;
+    line-height: 1.290323rem;
+}
+
 
 
 
